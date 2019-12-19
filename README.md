@@ -1,0 +1,1 @@
+java  -Dsbe.target.language=java -Dsbe.output.dir=../java -Dsbe.errorLog=yes -jar sbe-all.jar sbe-orderbook.xml

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package cc.kamma.benchmark.proto;
+option java_package = "cc.kamma.benchmark.proto";
+option java_outer_classname = "ProtoOrderbook";
+
+message L2DepthLine {
+    double price = 1;
+    double size = 2;
+    int32 numOfLiquid = 3;
+    int32 numOfOrder = 4;
+}
+
+message L2MarketData {
+    int64 timestamp = 1;
+    repeated L2DepthLine asks = 2;
+    repeated L2DepthLine bids = 3;
+}
+
+
