@@ -21,7 +21,7 @@ import java.util.List;
 @State(Scope.Benchmark)
 public class SbeBenchmark {
 
-    private ByteBuffer byteBuffer = ByteBuffer.allocate(64 * 1024);
+    private ByteBuffer byteBuffer = ByteBuffer.allocateDirect(64 * 1024);
     private final UnsafeBuffer unsafeBuffer = new UnsafeBuffer(byteBuffer);
 
     private OrderBook orderBook = OrderBook.createBigOrderbook();
@@ -65,7 +65,7 @@ public class SbeBenchmark {
 
         int length = MessageHeaderEncoder.ENCODED_LENGTH + ORDERBOOK_ENCODER.encodedLength();
         byte[] arr = new byte[length];
-        System.arraycopy(byteBuffer.array(), 0, arr, 0, length);
+        byteBuffer.get(arr, 0, length);
         return arr;
     }
 
