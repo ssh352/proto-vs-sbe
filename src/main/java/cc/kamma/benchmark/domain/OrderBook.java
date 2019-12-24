@@ -24,12 +24,12 @@ public class OrderBook {
         List<OrderbookItem> asks = new ArrayList<>(1000);
         List<OrderbookItem> bids = new ArrayList<>(1000);
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 2000; i++) {
             OrderbookItem item = new OrderbookItem(random.nextDouble(), random.nextDouble(), random.nextInt(100), 3);
             asks.add(item);
         }
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 2000; i++) {
             OrderbookItem item = new OrderbookItem(random.nextDouble(), random.nextDouble(), random.nextInt(100), 3);
             bids.add(item);
         }
