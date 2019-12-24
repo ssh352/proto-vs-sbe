@@ -21,7 +21,7 @@ import java.util.List;
 @State(Scope.Benchmark)
 public class SbeBenchmark {
 
-    private ByteBuffer byteBuffer = ByteBuffer.allocateDirect(64 * 1024);
+    private ByteBuffer byteBuffer = ByteBuffer.allocateDirect(128 * 1024);
     private final UnsafeBuffer unsafeBuffer = new UnsafeBuffer(byteBuffer);
 
     private OrderBook orderBook = OrderBook.createBigOrderbook();
